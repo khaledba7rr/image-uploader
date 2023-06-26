@@ -1,0 +1,32 @@
+$grey-color : #828282;
+
+.container {
+    min-height: 5vh;
+    background-color: $grey-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 10px;
+    * {
+        margin-right: 10px;
+    }
+
+    p {
+        span {
+            text-transform: capitalize;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+    }
+    a:visited {
+        text-decoration: none;
+    }
+}
+

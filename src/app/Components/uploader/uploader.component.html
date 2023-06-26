@@ -2,22 +2,21 @@
 
     <div *ngIf="!uploaded" class="uploader-container" [ngClass]="{'hide' : loading, uploaded}"> 
         <h2>Upload your image</h2>
-        <p>File should be Jpeg/Png</p>
-        <div class="image-container">
+        <p>File should be Jpeg/Jpg/Png</p>
             <div *ngIf="!image" class="drag-drop" appDragAndDrop (fileDropped)="onDrop($event)">
                 <img  src="../../../assets/drag.svg" alt="drag">
                 <p>Drag & Drop your image here</p>
+                <div class="wrong-file">wrong file extension!</div>
             </div>
-        </div>
         <p>Or</p>
         <div class="button">
             <label for="file">Choose a file
-                <input type="file" id="file" multiple accept=".jpeg , .jpg , .png" (change)="fileSelection($event)" />
+                <input type="file" id="file" multiple accept="image/jpg, image/jpeg, image/png" (change)="fileSelection($event)" />
             </label>
         </div>
     </div>
 
-    <div *ngIf="uploaded" class="uploaded-container uploader-container">
+    <div *ngIf="uploaded" class="uploaded-container">
         <div class="icon">
             <img src="../../../assets/done.svg" alt="done">
         </div>

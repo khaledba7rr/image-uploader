@@ -43,15 +43,15 @@ $secondary-color : #2F80ED;
     }
 }
 
+
 .uploader-container {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    min-width: 40%;
     padding: 15px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
     margin: 0px auto;
-    align-content: center;
     background-color: $container-background-color;
     color: grey;
 
@@ -60,20 +60,21 @@ $secondary-color : #2F80ED;
     }
 
     .drag-drop {
-        min-height: 30vh;
         padding: 5%;
         background-color: $drag-drop-background-color;
         border: 0.5px dashed rgba(100, 100, 111, 0.2);
         border-radius: 4%;
+        width: 80%;
+        text-align: center;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
         img {
-            height: 70%;
-            width: 70%;
-            object-fit: fill;
+            height: 90%;
+            width: 90%;
+            object-fit: contain;
+        }
+        .wrong-file{
+            display: none;
         }
     }
 
@@ -81,6 +82,16 @@ $secondary-color : #2F80ED;
         animation: shake 1s;
         animation-iteration-count: infinite;
     }
+    .filewrong {
+        border: dashed 1px red;
+
+        .wrong-file {
+            color: red;
+            text-transform: uppercase;
+            display: block;
+        }
+    }
+
 
     .button {
         width: 35%;
@@ -104,6 +115,13 @@ $secondary-color : #2F80ED;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 0px auto;
+    width: 40%;
+
+    * {
+        margin: 10px;
+    }
     .icon {
         display: flex;
         margin-top: 5%;
@@ -111,9 +129,12 @@ $secondary-color : #2F80ED;
     .photo {
         display: flex;
         justify-content: center;
+        align-items: center;
+        height: 80%;
+        width: 80%;
         img{
-            height: 70%;
-            width: 70%;
+            height: 100%;
+            width: 100%;
             object-fit: contain;
         }
     }
@@ -146,6 +167,7 @@ $secondary-color : #2F80ED;
 .hide {
     display: none;
 }
+
 
 @media (max-width : 480px) , (max-width: 800px) {
 
@@ -192,28 +214,37 @@ $secondary-color : #2F80ED;
     }
 
     .uploaded-container {
-        padding: 2%;
-        min-height: 70%;
-        font-size: 0.7rem;
+        padding: 3%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin: 0px auto;
+        width: 80%;
+    
+        * {
+            margin: 10px;
+        }
+
         .icon {
             display: flex;
             margin-top: 5%;
         }
-        .text {
-            text-align: center;
-        }
         .photo {
             display: flex;
             justify-content: center;
+            align-items: center;
+            height: 80%;
+            width: 80%;
             img{
-                height: 60%;
-                width: 60%;
+                height: 100%;
+                width: 100%;
                 object-fit: contain;
             }
+        }
+        .text {
+            text-align: center;
         }
         .link {
             display: flex;
