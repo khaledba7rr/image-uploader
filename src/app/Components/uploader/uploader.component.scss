@@ -1,0 +1,281 @@
+$body-background-color : #FAFAFB;
+$container-background-color : #FFFFFF;
+$drag-drop-background-color : #F6F8FB;
+$secondary-color : #2F80ED;
+
+
+.container {
+    height: 100vh;
+    width: 95%;
+    display: flex;
+    align-items: center;
+}
+
+.loading {
+    color: grey;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    width: 40vw;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: $container-background-color;
+
+    h2{
+        align-self: flex-start;
+        text-transform: capitalize;
+    }
+    .loader {
+        height: 5%;
+        width: 95%;
+        border-radius: 10%;
+        background-color: grey;
+        div {
+            height: 100%;
+            width: 20%;
+            background-color: $secondary-color;
+            animation: loading 4s forwards cubic-bezier(0,0,0,1) infinite;
+        }
+    }
+}
+
+.uploader-container {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 15px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin: 0px auto;
+    align-content: center;
+    background-color: $container-background-color;
+    color: grey;
+
+    * {
+        margin: 10px;
+    }
+
+    .drag-drop {
+        min-height: 30vh;
+        padding: 5%;
+        background-color: $drag-drop-background-color;
+        border: 0.5px dashed rgba(100, 100, 111, 0.2);
+        border-radius: 4%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            height: 70%;
+            width: 70%;
+            object-fit: fill;
+        }
+    }
+
+    .fileover {
+        animation: shake 1s;
+        animation-iteration-count: infinite;
+    }
+
+    .button {
+        width: 35%;
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: $secondary-color;
+            color: $body-background-color;
+            cursor: pointer;
+        }
+    }
+}
+
+.uploaded-container {
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .icon {
+        display: flex;
+        margin-top: 5%;
+    }
+    .photo {
+        display: flex;
+        justify-content: center;
+        img{
+            height: 70%;
+            width: 70%;
+            object-fit: contain;
+        }
+    }
+    .text {
+        text-align: center;
+    }
+    .link {
+        display: flex;
+        align-items: center;
+        button {
+            padding: 4%;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            background-color: $secondary-color;
+            color: $body-background-color;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 2%;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    }
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width : 480px) , (max-width: 800px) {
+
+    .container {
+        height: 95vh;
+        width: 95vw;
+        display: flex;
+        align-items: center;
+    }
+
+    .uploader-container {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 0.5% 1%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        background-color: $container-background-color;
+        color: grey;
+    
+        * {
+            margin: 5px;
+        }
+    
+        .drag-drop {
+            display: none;
+        }
+
+        .button {
+            text-align: center;
+            width: 35%;
+            input[type="file"] {
+                display: none;
+            }
+            label {
+                border: 1px solid #ccc;
+                display: inline-block;
+                padding: 6px 12px;
+                background-color: $secondary-color;
+                color: $body-background-color;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .uploaded-container {
+        padding: 2%;
+        min-height: 70%;
+        font-size: 0.7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        .icon {
+            display: flex;
+            margin-top: 5%;
+        }
+        .text {
+            text-align: center;
+        }
+        .photo {
+            display: flex;
+            justify-content: center;
+            img{
+                height: 60%;
+                width: 60%;
+                object-fit: contain;
+            }
+        }
+        .link {
+            display: flex;
+            align-items: center;
+            button {
+                padding: 4%;
+                outline: none;
+                border: none;
+                text-transform: capitalize;
+                background-color: $secondary-color;
+                color: $body-background-color;
+                cursor: pointer;
+            }
+    
+            input {
+                padding: 2%;
+            }
+    
+            input:focus {
+                outline: none;
+            }
+        }
+    }
+   
+    .hide {
+        display: none;
+    }
+}
+
+@keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+  
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+  
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+  
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+  
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+
+  }
+
+@keyframes loading {
+    20% {
+        width: 20%;
+    }
+
+    50% {
+        width: 60%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
